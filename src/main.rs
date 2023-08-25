@@ -121,7 +121,7 @@ async fn main() -> anyhow::Result<()> {
 
     let lnurl_service = Router::new()
         .route("/lnurl", get(get_lnurl_struct))
-        .route("/.well-known/lnurlp", get(get_lnurl_struct))
+        .route("/.well-known/lnurlp/*path", get(get_lnurl_struct))
         .route("/invoice", get(get_invoice))
         .with_state(state);
 
